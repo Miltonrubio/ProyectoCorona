@@ -48,6 +48,7 @@ class Admin
             return false;
         }
     }
+    /*
 
     function registrarUsuario($nombre, $telefono, $tipo, $password){
         $query = "INSERT INTO usuarios (telefono, nombre, password, tipo) VALUES (:telefono, :nombre, :password, :tipo)";
@@ -58,6 +59,20 @@ class Admin
         $result->bindParam(':tipo', $tipo);
         return $result->execute();
     }
+*/
+function registrarUsuario($nombre, $telefono, $clave, $empresa, $permisos, $email){
+    $status_usuario=1;
+    $query = "INSERT INTO usuarios (telefono, nombre, clave, empresa, permisos, status_usuario, email) VALUES (:telefono, :nombre, :clave, :empresa, :permisos, :status_usuario, :email)";
+    $result = $this->cnx->prepare($query);
+    $result->bindParam(':telefono', $telefono);
+    $result->bindParam(':nombre', $nombre);
+    $result->bindParam(':clave', $clave);
+    $result->bindParam(':empresa', $empresa);
+    $result->bindParam(':permisos', $permisos);
+    $result->bindParam(':status_usuario', $status_usuario);
+    $result->bindParam(':email', $email);
+    return $result->execute();
+}
 
     function desactivarUsuario($id){
         $query = "UPDATE usuarios SET estatus = 'baja' WHERE id = :id";
@@ -67,7 +82,7 @@ class Admin
     }
 
     function existenciaUsuario($telefono){
-        $query = "SELECT * FROM usuarios WHERE telefono = :telefono AND estatus = 'activo'";
+        $query = "SELECT * FROM usuarios WHERE telefono = :telefono AND status_usuario = 1";
         $result = $this->cnx->prepare($query);
         $result->bindParam(':telefono', $telefono);
         if ($result->execute()) {

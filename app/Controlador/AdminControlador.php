@@ -22,12 +22,15 @@ switch ($_REQUEST["operador"]) {
     case 'registrar_usuario':
         $nombre = isset($_POST['nombre_usuario']) ? $_POST['nombre_usuario'] : '';
         $telefono = isset($_POST['telefono_usuario']) ? $_POST['telefono_usuario'] : '';
-        $tipo = isset($_POST['tipo_usuario']) ? $_POST['tipo_usuario'] : '';
+        //$tipo = isset($_POST['tipo_usuario']) ? $_POST['tipo_usuario'] : '';
         $password = isset($_POST['password_usuario']) ? $_POST['password_usuario'] : '';
-        if (!empty($nombre) && !empty($telefono) && !empty($tipo) && !empty($password)) {
+        $empresa = isset($_POST['empresa']) ? $_POST['empresa'] : '';
+        $permisos = isset($_POST['permisos']) ? $_POST['permisos'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        if (!empty($nombre) && !empty($telefono) && !empty($empresa) && !empty($password) && !empty($email)&& !empty($permisos) ) {
             $passHash = $bd->encryption($password);
             if ($bd->existenciaUsuario($telefono)) {
-                if ($bd->registrarUsuario($nombre, $telefono, $tipo, $passHash)) {
+                if ($bd->registrarUsuario  ($nombre, $telefono, $passHash, $empresa, $permisos, $email)){  /*($nombre, $telefono, $tipo, $passHash)){*/ 
                     $response = 'success';
                 }else {
                     $response = 'error';

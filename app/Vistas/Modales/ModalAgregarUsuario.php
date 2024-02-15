@@ -12,18 +12,29 @@
                         <input placeholder="Ingresa el nombre" type="text" class="form-control" name="nombre_usuario" id="nombre_usuario" required>
                     </div>
                     <div class="mb-3">
+                        <label for="email" class="form-label">Correo electronico</label>
+                        <input placeholder="Ingresa el nombre" type="text" class="form-control" name="email" id="email" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="telefono_usuario" class="form-label">Teléfono</label>
                         <input type="tel" onkeypress="return [45, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57].includes(event.charCode);" maxlength="10" required class="form-control" placeholder="Ingresa el numero de telefono" name="telefono_usuario" id="telefono_usuario">
                     </div>
                     <div class="mb-3">
-                        <label for="tipo_usuario" class="form-label">Tipo</label>
-                        <select class="form-select" name="tipo_usuario" id="tipo_usuario" required>
+                        <label for="empresa" class="form-label">Empresa</label>
+                        <select class="form-select" name="empresa" id="empresa" required>
                             <option value="" disabled selected>Selecciona una opción...</option>
-                            <option value="admin">Administrador</option>
-                            <option value="notas">Notas</option>
-                            <option value="recepcion">Recepcion</option>
-                            <option value="atencion">Atencion</option>
-                            <option value="bodegas">Bodegas</option>
+                            <option value="BITALA">BITALA</option>
+                            <option value="CORONA">CORONA</option>
+                            <option value="HIDALGO">HIDALGO</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="permisos" class="form-label">Rol</label>
+                        <select class="form-select" name="permisos" id="permisos" required>
+                            <option value="" disabled selected>Selecciona una opción...</option>
+                            <option value="SUPERADMIN">SUPERADMIN</option>
+                            <option value="INVENTARIO">INVENTARIO</option>
+                            <option value="SOLICITANTE">SOLICITANTE</option>
                         </select>
                     </div>
                     <div class="mb-3">
