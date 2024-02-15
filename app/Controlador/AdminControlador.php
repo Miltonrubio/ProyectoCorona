@@ -45,7 +45,7 @@ switch ($_REQUEST["operador"]) {
         break;
 
     case 'eliminar_usuario':
-        $id = isset($_POST['id_usuario']) ? $_POST['id_usuario'] : '';
+        $id = isset($_POST['ID_usuario']) ? $_POST['ID_usuario'] : '';
         if (!empty($id)) {
             if ($bd->desactivarUsuario($id)) {
                 $response = 'success';
@@ -59,7 +59,7 @@ switch ($_REQUEST["operador"]) {
         break;
 
     case 'editar_usuario':
-        $idUsuario = isset($_POST['id_editar_usuario']) ? $_POST['id_editar_usuario'] : '';
+        $ID_usuario = isset($_POST['ID_usuario']) ? $_POST['ID_usuario'] : '';
         $nombre = isset($_POST['nombre_usuario']) ? $_POST['nombre_usuario'] : '';
         $telefono = isset($_POST['telefono_usuario']) ? $_POST['telefono_usuario'] : '';
         $tipo = isset($_POST['tipo_usuario']) ? $_POST['tipo_usuario'] : '';
@@ -72,9 +72,9 @@ switch ($_REQUEST["operador"]) {
         break;
 
     case 'ver_password_usuario':
-        $idUsuario = isset($_POST['idUsuario']) ? $_POST['idUsuario'] : '';
-        if (!empty($idUsuario)) {
-            $passEncript = $bd->obtenerPassword($idUsuario);
+        $ID_usuario = isset($_POST['ID_usuario']) ? $_POST['ID_usuario'] : '';
+        if (!empty($ID_usuario)) {
+            $passEncript = $bd->obtenerPassword($ID_usuario);
             $response = $bd->decryption($passEncript);
         }else {
             $response = 'required';

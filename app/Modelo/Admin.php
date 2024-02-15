@@ -74,10 +74,10 @@ function registrarUsuario($nombre, $telefono, $clave, $empresa, $permisos, $emai
     return $result->execute();
 }
 
-    function desactivarUsuario($id){
-        $query = "UPDATE usuarios SET estatus = 'baja' WHERE id = :id";
+    function desactivarUsuario($ID_usuario){
+        $query = "UPDATE usuarios SET status_usuario = 0 WHERE ID_usuario = :ID_usuario";
         $result = $this->cnx->prepare($query);
-        $result->bindParam(':id', $id);
+        $result->bindParam(':ID_usuario', $ID_usuario);
         return $result->execute();
     }
 
@@ -112,13 +112,13 @@ function registrarUsuario($nombre, $telefono, $clave, $empresa, $permisos, $emai
         return $output;
     }
 
-    function obtenerPassword($idUsuario){
-        $query = "SELECT password FROM usuarios WHERE id = :idUsuario";
+    function obtenerPassword($ID_usuario){
+        $query = "SELECT clave FROM usuarios WHERE ID_usuario = :ID_usuario";
         $result = $this->cnx->prepare($query);
-        $result->bindParam(':idUsuario', $idUsuario);
+        $result->bindParam(':ID_usuario', $ID_usuario);
         $result->execute();
         $fila = $result->fetch();
-        return $fila['password'];
+        return $fila['clave'];
     }
 
     function obtenerInfoUsuario($idUsuario){

@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <form id="form_eliminar_usuario" enctype="multipart/form-data">
-                    <input type="text" id="id_usuario_eliminar" name="id_usuario" hidden>
+                    <input type="text"  id="ID_usuario" name="ID_usuario" hidden>
                     <p>¿Estás seguro de eliminar este usuario?</p>
             </div>
             <div class="modal-footer">

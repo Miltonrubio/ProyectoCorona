@@ -83,7 +83,7 @@ $(document).on("submit", "#form_nuevo_usuario", function(e) {
 
 function modalEliminarUsuario(idUsuario){
     $('#modal_eliminar_usuario').modal('show');
-    $('#id_usuario_eliminar').val(idUsuario);
+    $('#ID_usuario').val(idUsuario);
 }
 
 $(document).on("submit", "#form_eliminar_usuario", function(e){
@@ -160,11 +160,11 @@ $(document).on("submit", "#form_editar_usuario", function(e){
     });
 });
 
-function obtenerPassword(idUsuario){
+function obtenerPassword(ID_usuario){
     $('#modal_ver_password').modal('show');
     bodyModal = $('#body_modal_password'); 
     data = {
-        'idUsuario' : idUsuario
+        'ID_usuario' : ID_usuario
     };
     $.ajax({
         data : data,
