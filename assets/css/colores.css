@@ -1,0 +1,14 @@
+.statusPendiente{
+
+    background-color: #FFD591 !important;
+}
+
+.statusEntregado{
+
+    background-color: #4A9C72 !important;
+}
+
+.statusRechazado{
+
+    background-color: #EF3636 !important;
+}

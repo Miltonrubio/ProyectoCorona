@@ -8,9 +8,9 @@ if (isset($_SESSION['ID_usuario'])) {
     // Verificar el tipo de usuario
     if ($_SESSION['tipo'] === 'SUPERADMIN') {
         header('Location: ./app/Vistas/admin.php');
-    } else if ($_SESSION['tipo'] === 'notas') {
+    } else if ($_SESSION['tipo'] === 'INVENTARIO') {
         // Redirigir al panel de administración
-        header('Location: ./app/Vistas/notas.php');
+        header('Location: ./app/Vistas/inventarios.php');
         exit();
     } elseif ($_SESSION['tipo'] === 'recepcion' || $_SESSION['tipo'] === 'atencion') {
         // Redirigir al panel de administración

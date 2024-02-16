@@ -2,14 +2,14 @@
 session_start();
 
 // Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['ID_usuario'])) {
    // Redirigir a la página de inicio de sesión
    header('Location: ./login.php');
    exit();
 }
 
 //Verificar si el usuario tiene el permiso adecuado
-if ($_SESSION['tipo'] !== 'notas' && $_SESSION['tipo'] !== 'admin') {
+if ($_SESSION['tipo'] !== 'INVENTARIO' && $_SESSION['tipo'] !== 'SUPERADMIN') {
    // Redirigir o mostrar un mensaje de error
    header('Location: ./error.html');
    exit();
