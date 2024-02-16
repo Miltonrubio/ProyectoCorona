@@ -9,7 +9,7 @@ if (!isset($_SESSION['ID_usuario'])) {
 }
 
 //Verificar si el usuario tiene el permiso adecuado
-if ($_SESSION['tipo'] !== 'INVENTARIO' && $_SESSION['tipo'] !== 'SUPERADMIN') {
+if ($_SESSION['tipo'] !== 'COMPRADOR' && $_SESSION['tipo'] !== 'SUPERADMIN') {
     // Redirigir o mostrar un mensaje de error
     header('Location: ./error.html');
     exit();
@@ -85,7 +85,7 @@ if ($_SESSION['tipo'] !== 'INVENTARIO' && $_SESSION['tipo'] !== 'SUPERADMIN') {
                                             </div>
 
                                             <div class="d-flex">
-                                               <button class="btn btn-primary" type="button"> <i class="bi bi-file-earmark-pdf-fill">Descargar</i></button>
+                                               <button class="btn btn-primary" type="button" onclick="modalAgendarPedido()"><i class="bi bi-plus-lg">Agendar</i></button>
                                             </div>
                                         </div>
                                         <div class="overflow-auto">
@@ -96,7 +96,6 @@ if ($_SESSION['tipo'] !== 'INVENTARIO' && $_SESSION['tipo'] !== 'SUPERADMIN') {
                                                         <th>Proveedor</th>
                                                         <th>Fecha Entrega</th>
                                                         <th>Solicita</th>
-                                                        <th>Empresa</th>
                                                         <th>Observaciones</th>
                                                         <th>Status</th>
                                                         <th>Acciones</th>
@@ -117,10 +116,7 @@ if ($_SESSION['tipo'] !== 'INVENTARIO' && $_SESSION['tipo'] !== 'SUPERADMIN') {
         </div>
     </div>
     <?php
-
-include './Modales/RechazarSolicitud.php';
-include './Modales/RestaurarSolicitud.php';
-include './Modales/EntregarSolicitud.php';
+    include './Modales/AgendarSolicitud.php';
 
 /*
     include './Modales/ModalAgregarUsuario.php';
@@ -148,7 +144,7 @@ include './Modales/EntregarSolicitud.php';
     <script src="../../assets/js/main.js"></script>
 
     <!-- JS Funciones-->
-    <script src="../../assets/js/inventarios.js" type="text/javascript"></script>
+    <script src="../../assets/js/compradores.js" type="text/javascript"></script>
 
 
 

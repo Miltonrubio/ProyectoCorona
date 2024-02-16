@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Cambiar contraseña</h5>
+                <h5 class="modal-title">Editar Usuario</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -35,7 +35,7 @@
                             <option value="" disabled selected>Selecciona una opción...</option>
                             <option value="SUPERADMIN">SUPERADMIN</option>
                             <option value="INVENTARIO">INVENTARIO</option>
-                            <option value="SOLICITANTE">SOLICITANTE</option>
+                            <option value="COMPRADOR">COMPRADOR</option>
                         </select>
                     </div>
             </div>

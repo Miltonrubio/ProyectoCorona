@@ -12,9 +12,9 @@ if (isset($_SESSION['ID_usuario'])) {
         // Redirigir al panel de administración
         header('Location: ./app/Vistas/inventarios.php');
         exit();
-    } elseif ($_SESSION['tipo'] === 'recepcion' || $_SESSION['tipo'] === 'atencion') {
+    } elseif ($_SESSION['tipo'] === 'COMPRADOR') {
         // Redirigir al panel de administración
-        header('Location: ./app/Vistas/recepcion.php');
+        header('Location: ./app/Vistas/compradores.php');
         exit();
     }
 } else {

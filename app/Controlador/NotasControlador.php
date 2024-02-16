@@ -556,6 +556,8 @@ switch ($_REQUEST["operador"]) {
             $_SESSION['nombre'] =  $user['nombre']; 
             $_SESSION['telefono'] =  $user['telefono']; 
             $_SESSION['tipo'] =  $user['permisos']; 
+            $_SESSION['empresa'] =  $user['empresa']; 
+            $_SESSION['email'] =  $user['email']; 
             
             $response = $user['tipo'];
           }else {

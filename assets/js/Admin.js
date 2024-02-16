@@ -37,9 +37,9 @@ function procesarRespuestaUsuarios(response, table) {
                 '<td>'+usuario.empresa+'</td>'+
                 '<td>'+usuario.permisos+'</td>'+
                 '<td>'+
-                '<button type="button" class="btn btn-info btn-sm m-1" onclick="modalEditarPassword('+usuario.ID_usuario+');">Editar <i class="bi bi-pen"></i></button>'+
-                '<button type="button" class="btn btn-info btn-sm m-1" onclick="obtenerPassword('+usuario.ID_usuario+');">Contraseña <i class="bi bi-eye-fill"></i></button>'+
-                '<button type="button" class="btn btn-danger btn-sm m-1" onclick="modalEliminarUsuario('+usuario.ID_usuario+');">Eliminar <i class="bi bi-person-x-fill"></i></button>'+
+                '<button type="button" class="btn btn-success btn-sm m-1" onclick="modalEditarPassword('+usuario.ID_usuario+');"> <i class="bi bi-pen"></i></button>'+
+                '<button type="button" class="btn btn-warning btn-sm m-1" onclick="obtenerPassword('+usuario.ID_usuario+');"> <i class="bi bi-eye-fill"></i></button>'+
+                '<button type="button" class="btn btn-danger btn-sm m-1" onclick="modalEliminarUsuario('+usuario.ID_usuario+');"> <i class="bi bi-person-x-fill"></i></button>'+
                 '</td>'+
                 '</tr>'
             );
